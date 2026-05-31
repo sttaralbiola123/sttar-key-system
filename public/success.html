@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Success</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .glass { background: rgba(0,0,0,0.7); backdrop-filter: blur(16px); }
+    .key-text { font-family: monospace; letter-spacing: 6px; animation: pulse 2s infinite; }
+    @keyframes pulse { 50% { transform: scale(1.05); } }
+  </style>
+</head>
+<body class="bg-zinc-950 text-white min-h-screen flex items-center justify-center">
+  <div class="max-w-md w-full p-8 text-center glass rounded-3xl">
+    <i class="fa-solid fa-key text-7xl text-emerald-500 mb-6"></i>
+    <h2 class="text-3xl font-bold mb-6">Your Key is Ready!</h2>
+    
+    <div class="bg-black/50 p-8 rounded-2xl mb-8">
+      <p id="keyText" class="key-text text-2xl text-emerald-400"></p>
+    </div>
+
+    <button onclick="copyKey()" 
+            class="w-full bg-emerald-600 hover:bg-emerald-500 py-5 rounded-2xl font-semibold text-lg">
+      📋 Copy Key
+    </button>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const key = urlParams.get('key');
+    if (key) document.getElementById('keyText').textContent = key;
+
+    function copyKey() {
+      navigator.clipboard.writeText(key);
+      alert("✅ Key copied!");
+    }
+  </script>
+</body>
+</html>
