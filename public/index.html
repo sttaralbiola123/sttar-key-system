@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .glass { background: rgba(255,255,255,0.08); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.15); }
+    .dark .glass { background: rgba(0,0,0,0.65); border: 1px solid rgba(255,255,255,0.1); }
+  </style>
+</head>
+<body class="bg-zinc-950 text-white min-h-screen flex items-center justify-center">
+  <div class="max-w-md w-full p-6">
+    <div class="glass rounded-3xl p-10 shadow-2xl text-center">
+      <h1 class="text-5xl font-bold mb-2 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Sttar Loader</h1>
+      <p class="text-zinc-400 mb-10">Key System</p>
+
+      <a href="/auth/discord" 
+         class="block w-full bg-indigo-600 hover:bg-indigo-700 py-6 rounded-2xl text-xl font-semibold transition-all active:scale-95">
+        <i class="fa-brands fa-discord mr-3"></i>
+        Login with Discord to Get Key
+      </a>
+
+      <p class="text-xs text-zinc-500 mt-8">You must be a member of my Discord server</p>
+    </div>
+  </div>
+</body>
+</html>
